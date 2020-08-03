@@ -1,0 +1,497 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* background-color:#183349; */
+    margin: 0px;
+    font-size: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: #183349;
+}
+
+.navbar-brand {
+    color: black !important;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+#navbarSupportedContent {
+    position: absolute;
+    right: 10vh;
+}
+
+.nav-link {
+    font-family: 'Russo One', sans-serif;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: gold !important;
+}
+
+#quote-btn {
+    font-family: 'Russo One',
+        sans-serif;
+    width: 30vh;
+    height: 5vh;
+}
+
+.container-fluid {
+    /* height: 90vh; */
+    background-image: url("/images/Truck-road-beautiful-scenery-1280x640.jpg") !important;
+    background-color: #183349;
+    background-position: top;
+    background-size: 100% 60%;
+    background-repeat: no-repeat;
+}
+
+.super-text-con {
+    /* width: 75%; */
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.super-text-con .lead {
+    width: 60%;
+    font-size: 390%;
+    font-family: 'PT Sans Caption',
+        sans-serif;
+
+    text-align: center;
+    color: white;
+    text-shadow: -1px -2px 2px black;
+}
+
+.super-text-con .detail {
+    color: white;
+    width: 55%;
+    text-align: center;
+}
+
+.explore-btn {
+    /* width: 40vh; */
+    height: 6vh;
+    font-family: 'Aclonica',
+        sans-serif;
+    font-size: 100%;
+}
+
+.section1-a-super {
+    background: transparent;
+    /* background-color: #152633 !important; */
+}
+
+.section1-a {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.section1-a .mode-box {
+    background-color: #1833496e;
+    /* border: 1px solid #17a2b8; */
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* box-shadow: 0px 1px 15px black; */
+    box-shadow: 4px 4px 20px black;
+    cursor: pointer;
+    ;
+}
+
+.section1-a .mode-box:hover {
+    background: #183349;
+    /* background: linear-gradient(to top left, #183349, #17a2b8);  */
+    box-shadow: 0px 0px 0px 0px !important;
+    transition: box-shadow 0.3s;
+    transition: background 2.2s;
+}
+
+.mode-box .icon-box .fa {
+    font-size: 200%;
+    color: white;
+}
+
+.mode-box-text {
+    font-family: 'Almarai',
+        sans-serif;
+}
+
+.services-lead {
+    font-size: 200%;
+    font-family: 'Bebas Neue',
+        cursive;
+}
+
+.services-detail {
+    font-size: 100%;
+    font-family: 'MuseoModerno',
+        cursive;
+}
+
+.small-dot {
+    background-color: #17a2b8;
+    width: 5px;
+    height: 5px;
+}
+
+.big-dot {
+    background: #183349;
+    width: 10px;
+    height: 10px;
+}
+
+.services-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.services-box {
+    width: 35%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.service-image-box {
+    height: 100px;
+    width: 400px;
+    border: 1px solid red;
+}
+
+#about-view {
+
+    background-color: #17a2b8;
+}
+
+.about-flex {
+    background: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-text-div {
+    width: 40% !important;
+}
+
+.about-company {
+    font-size: 200%;
+    font-family: 'Lobster',
+        cursive;
+
+}
+
+.about-texts {
+    font-family: 'Courgette',
+        cursive;
+}
+
+.about-list-div {
+    width: 30%;
+}
+
+.about-list-div a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Concert One',
+        cursive;
+}
+
+.collapse-text {
+    font-family: 'Fira Sans Extra Condensed',
+        sans-serif;
+}
+
+.contact-flex-super {
+
+    background: linear-gradient(to left, #183349, #17a2b8);
+}
+
+.contact-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.address-con {
+    width: 25%;
+}
+
+.map-con {
+    height: 20vh;
+}
+
+.form-con-super {
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.lead2 {
+    color: white !important;
+}
+
+.form-con {
+    background-color: #17a3b865;
+    width: 75%;
+}
+
+.form-con label {
+    color: white;
+}
+
+.form-con textarea {
+    height: 20vh;
+    resize: none;
+}
+
+.form-con button {
+    width: 100%;
+    background-color: #183349;
+    border: hidden;
+}
+
+.footer-super {
+    background-color: #183349 !important;
+}
+
+.footer-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-brand-con {
+    width: 45%;
+}
+
+.footer-flex .brand {
+    color: white !important;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.footer-nav-con {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-nav-con a {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Concert One',
+        cursive;
+}
+
+.footer-nav-con a:hover {
+    color: #17a2b8 !important;
+}
+
+/* ------------------------------------- */
+@media screen and (max-width:1440px) {
+
+    .container-fluid {
+        /* height: 90vh; */
+        background-size: 100% 50%;
+    }
+
+
+}
+
+@media screen and (max-width:1024px) {
+
+    .container-fluid {
+        background-size: 100% 40%;
+    }
+
+    .super-text-con .lead {
+        width: 60%;
+        font-size: 300%;
+    }
+
+    .services-box {
+        width: 40%;
+    }
+
+    .service-image-box {
+        height: 100px;
+        width: 600px;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    #navbarSupportedContent {
+        position: relative;
+        left: 0;
+    }
+
+    #quote-btn {
+        width: auto;
+        height: auto;
+    }
+
+    .container-fluid {
+        background-size: 100% 35%;
+    }
+
+    .super-text-con {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .super-text-con .lead {
+        width: 60%;
+        font-size: 250%;
+    }
+
+
+
+    .services-box {
+        width: 40%;
+        flex-direction: column;
+    }
+
+    .service-image-box {
+        height: 100px;
+        width: 100%;
+    }
+
+    .about-flex {
+        flex-direction: column;
+    }
+
+    .about-text-div {
+        width: 75% !important;
+        padding: 5px !important;
+    }
+
+    .about-list-div {
+        width: 75% !important;
+    }
+
+    .contact-flex {
+        flex-direction: column-reverse;
+    }
+
+    .address-con {
+        width: 80%;
+    }
+
+    .form-con-super {
+        width: 80%;
+        justify-content: center;
+    }
+
+    .form-con {
+        background-color: #17a3b870;
+        width: 95%;
+    }
+
+    .footer-brand-con {
+        width: 30%;
+    }
+
+    .footer-nav-con {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .super-text-con .lead {
+        width: 90%;
+        font-size: 250%;
+    }
+
+    .services-box {
+        width: 90%;
+    }
+
+
+    .about-text-div,
+    .about-list-div {
+        width: 95% !important;
+    }
+
+    about-list-div {
+        padding: 5px !important;
+    }
+
+    .address-con {
+        width: 100%;
+    }
+
+    .form-con-super {
+        width: 100%;
+    }
+
+    .form-con {
+        width: 100%;
+    }
+
+    .footer-flex {
+        flex-direction: column;
+    }
+
+    .footer-brand-con {
+        width: 100%;
+    }
+
+    .footer-flex .brand {
+        color: white !important;
+        font-size: 150%;
+        font-weight: bold;
+    }
+
+    .footer-nav-con {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .powered {
+        text-align: center !important;
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .mode-box {
+        margin: 0% 0% 10% 0% !important;
+    }
+
+    .super-text-con .lead {
+        width: 100%;
+        font-size: 200%;
+    }
+
+    .services-box {
+        width: 100%;
+    }
+
+    .about-text-div,
+    .about-list-div {
+        width: 100% !important;
+    }
+}
