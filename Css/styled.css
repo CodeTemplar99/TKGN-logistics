@@ -215,7 +215,7 @@ body {
 .go-span {
     font-family: 'Tangerine',
         cursive;
-        font-size: 200%;
+    font-size: 200%;
 }
 
 .footer-super {
@@ -437,9 +437,28 @@ body {
         text-align: center !important;
         font-size: 90%;
     }
+
+    .go-text,
+    .go-span {
+        text-align: center;
+    }
+
+    .all-rights {
+        font-size: 80%;
+    }
+
+    .powered {
+        font-size: 90%;
+    }
 }
 
 @media screen and (max-width:375px) {
+
+
+    .s1 {
+        background-position: center;
+        background-size: 100% 100%;
+    }
 
     .pic-right,
     .pic-left {
@@ -451,6 +470,7 @@ body {
 
     .about-text-div {
         padding: 0px !important;
+        padding-bottom: 20px !important;
     }
 
     .about-list-div {
