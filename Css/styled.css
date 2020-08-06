@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+.btn{
+    border: hidden;
+}
+
 body {
     /* background-color:#183349; */
     background: rgb(255, 245, 245) !important;
@@ -91,6 +95,25 @@ body {
     color: white;
     background: #FF494D;
     border: 2px solid #FF494D;
+}
+
+.modal-header {
+    /* background: #FE3260 !important; */
+    background: linear-gradient(to left, #fe3262, #FF494D) !important;
+    color: white;
+}
+
+.modal-footer .btn-primary {
+    /* background: #FE3260 !important; */
+    background: linear-gradient(to right, #fe3262, #FF494D) !important;
+    color: white;
+    border: hidden;
+}
+
+.modal-footer .btn-primary:hover {
+    color: black;
+    background: transparent !important;
+    border: 2px solid #fe3262 !important;
 }
 
 .modal-body textarea {
