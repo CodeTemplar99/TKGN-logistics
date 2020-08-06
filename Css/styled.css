@@ -15,7 +15,7 @@ body {
     background-color: #183349;
 }
 
-.navbar-brand{
+.navbar-brand {
     /* color: #FF494D !important; */
     /* font-size: 150%; */
     /* font-weight: bold; */
@@ -75,7 +75,7 @@ body {
 }
 
 
-.s1 .btn {
+.request {
     background: transparent;
     border: 2px solid #FE3260;
     color: black;
@@ -87,10 +87,15 @@ body {
     width: 30vh;
 }
 
-.s1 .btn:hover {
+.request:hover {
     color: white;
     background: #FF494D;
     border: 2px solid #FF494D;
+}
+
+.modal-body textarea {
+    height: 20vh;
+    resize: none;
 }
 
 .s2-inner {
@@ -456,7 +461,7 @@ body {
         word-wrap: break-word;
     }
 
-    .s1 .btn {
+    .request {
         padding: 10px !important;
         width: auto;
     }
@@ -558,7 +563,7 @@ body {
         word-wrap: break-word;
     }
 
-    .s1 .btn {
+    .request {
         padding: 5px !important;
         width: auto;
     }
