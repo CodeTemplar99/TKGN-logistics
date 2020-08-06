@@ -37,7 +37,7 @@ body {
 
 .s1 {
     height: 60vh !important;
-    background-image: url("/images/1589124.jpg") !important;
+    background-image: url("/images/delivery_hero.jpg") !important;
     background-position: top;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -45,7 +45,7 @@ body {
 
 
 .s1-overlay {
-    background: #ff494c49;
+    background: #ff494cab;
     height: inherit;
     width: inherit;
     display: flex;
@@ -64,6 +64,8 @@ body {
     margin: 30px;
     text-align: center !important;
     font-weight: bold;
+    color: white;
+    text-shadow: 2px 5px 10px #FE3260;
 }
 
 
@@ -122,11 +124,30 @@ body {
 }
 
 .s3 {
-    background: linear-gradient(to left, #FE3260, #FF494D) !important;
+    position: relative;
+    height: 50vh;
+}
+
+.s3-image-blur {
+    height: 100%;
+    background-image: url("/images/tech-startup.jpg") !important;
+    background-position: left;
+    background-size: 100%;
+    /* filter: blur(0px); */
+    background-repeat: no-repeat;
+}
+
+.s3-flex {
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to left, #fe32626e, #FF494D) !important;
+    background: transparent;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     flex-wrap: wrap;
+    position: absolute;
+    top: 0px;
 }
 
 .about-text-div {
