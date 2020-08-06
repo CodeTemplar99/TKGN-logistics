@@ -4,7 +4,7 @@ html {
 
 body {
     /* background-color:#183349; */
-    background: white !important;
+    background: rgb(255, 245, 245) !important;
     margin: 0px;
     font-size: 100%;
     width: 100%;
@@ -15,11 +15,17 @@ body {
     background-color: #183349;
 }
 
-.navbar-brand {
-    color: #FF494D !important;
-    font-size: 150%;
-    font-weight: bold;
+.navbar-brand{
+    /* color: #FF494D !important; */
+    /* font-size: 150%; */
+    /* font-weight: bold; */
+    width: 20%;
+    /* border: 1px solid red; */
 }
+
+/* .navbar-brand img{
+    width: inherit;
+} */
 
 #navbarSupportedContent {
     position: absolute;
@@ -289,6 +295,11 @@ body {
         left: 0;
     }
 
+    .s1 {
+        background-position: center;
+        background-size: 100% 100%;
+    }
+
     .s1-text {
         /* color: white; */
         font-size: 200%;
@@ -329,10 +340,29 @@ body {
     }
 
     .s3 {
+        height: 80vh;
+    }
+
+    .s3-image-blur {
+        height: 100%;
+        background-image: url("/images/tech-startup.jpg") !important;
+        background-position: top;
+        background-size: 100%;
+        /* filter: blur(0px); */
+        background-repeat: no-repeat;
+    }
+
+    .s3-flex {
+        width: inherit;
+        height: inherit;
+        background: linear-gradient(to bottom, #fe32626e, #FF494D) !important;
+        background: transparent;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        /* align-items: center; */
         flex-wrap: wrap;
+        position: absolute;
+        top: 0px;
     }
 
     .about-text-div {
@@ -439,6 +469,16 @@ body {
         text-align: center !important;
     }
 
+
+    .s3 {
+        height: 100vh;
+    }
+
+    .s3-flex {
+        background: linear-gradient(to bottom, #fe32626e, #FF494D) !important;
+    }
+
+
     .s4-boxes {
         width: 90%;
     }
@@ -521,6 +561,10 @@ body {
     .s1 .btn {
         padding: 5px !important;
         width: auto;
+    }
+
+    .s3 {
+        height: 110vh;
     }
 
     .s4-boxes {
