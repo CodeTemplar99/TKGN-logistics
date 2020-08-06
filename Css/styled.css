@@ -2,7 +2,7 @@ html {
     scroll-behavior: smooth;
 }
 
-.btn{
+.btn {
     border: hidden;
 }
 
@@ -289,14 +289,14 @@ body {
 }
 
 .footer-brand-con {
-    width: 45%;
+    width: 30%;
 }
 
-.footer-flex .brand {
-    color: white !important;
-    font-size: 150%;
-    font-weight: bold;
+.foot-brand {
+    width: inherit;
 }
+
+
 
 .footer-nav-con {
     width: 50%;
@@ -444,12 +444,7 @@ body {
         width: 45%;
     }
 
-    .footer-flex .brand {
-        color: white !important;
-        font-size: 150%;
-        font-weight: bold;
-    }
-
+   
     .footer-nav-con {
         width: 50%;
         display: flex;
