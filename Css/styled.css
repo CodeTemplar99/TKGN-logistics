@@ -16,7 +16,7 @@ body {
 }
 
 .navbar-brand {
-    color: black !important;
+    color: #FF494D !important;
     font-size: 150%;
     font-weight: bold;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 .nav-link:hover {
-    color: gold !important;
+    color: #FF494D !important;
 }
 
 .s1 {
@@ -45,7 +45,7 @@ body {
 
 
 .s1-overlay {
-    background: #ffffff8a;
+    background: #ff494c49;
     height: inherit;
     width: inherit;
     display: flex;
@@ -69,8 +69,8 @@ body {
 
 .s1 .btn {
     background: transparent;
-    border: 2px solid #183349;
-    color: #183349;
+    border: 2px solid #FE3260;
+    color: black;
     font-weight: bold;
     padding: 15px !important;
     width: 20%;
@@ -81,8 +81,8 @@ body {
 
 .s1 .btn:hover {
     color: white;
-    background: #17a2b8;
-    border: 2px solid #17a2b8;
+    background: #FF494D;
+    border: 2px solid #FF494D;
 }
 
 .s2-inner {
@@ -118,10 +118,11 @@ body {
 .right-img-con .fa,
 .left-img-con .fa {
     font-size: 400%;
-    color: #43b974;
+    color: #FF494D;
 }
 
 .s3 {
+    background: linear-gradient(to left, #FE3260, #FF494D) !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -130,6 +131,7 @@ body {
 
 .about-text-div {
     width: 55% !important;
+
     /* border: 1px solid red !important; */
 }
 
@@ -137,12 +139,14 @@ body {
     font-size: 200%;
     font-family: 'Lobster',
         cursive;
+    color: white;
 
 }
 
 .about-texts {
     font-family: 'Courgette',
         cursive;
+    color: white;
 }
 
 .about-list-div {
@@ -182,13 +186,13 @@ body {
 }
 
 .s4-boxes:hover {
-    border: 1px solid #17a2b8;
+    border: 1px solid #FF494D;
 }
 
 .s4-boxes .fa {
     font-size: 200%;
     margin-bottom: 20px;
-    color: #183349;
+    color: #FF494D;
 }
 
 .s4-boxes p {
@@ -197,6 +201,7 @@ body {
     margin-bottom: 5px;
     font-family: 'Fredoka One',
         cursive;
+    color: #FE3260;
 }
 
 .s5 {
@@ -219,7 +224,7 @@ body {
 }
 
 .footer-super {
-    background-color: #183349 !important;
+    background-color: #FF494D !important;
 }
 
 .footer-flex {
@@ -253,7 +258,7 @@ body {
 }
 
 .footer-nav-con a:hover {
-    color: #17a2b8 !important;
+    color: #FF494D !important;
 }
 
 @media screen and (max-width:768px) {
@@ -300,7 +305,6 @@ body {
     .right-img-con .fa,
     .left-img-con .fa {
         font-size: 300%;
-        color: #43b974;
     }
 
     .s3 {
@@ -348,7 +352,7 @@ body {
     }
 
     .footer-super {
-        background-color: #183349 !important;
+        background-color: #FF494D !important;
     }
 
     .footer-flex {
@@ -382,7 +386,7 @@ body {
     }
 
     .footer-nav-con a:hover {
-        color: #17a2b8 !important;
+        color: #FF494D !important;
     }
 
 }
