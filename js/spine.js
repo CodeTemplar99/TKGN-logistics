@@ -4,7 +4,7 @@ function scrollToService() {
 
 
 function scrollToInfo() {
-    document.querySelector(".s3").scrollIntoView();
+    document.querySelector(".s1-a").scrollIntoView();
 }
 
 // function scrollToContact() {
