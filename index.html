@@ -70,6 +70,65 @@
                         <li class="nav-item">
                             <a class="nav-link" onclick="scrollToService()">Services</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                More
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Cookie policy</a>
+                                <a class="dropdown-item" href="#">FAQ</a>
+
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i class="fa fa-phone"></i><span
+                                        class="ml-1 text-capitalize">+234telephone</span>
+                                </a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-mobile-alt"></i><span
+                                        class="ml-1 text-capitalize">081mobile</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="modal" data-target="#iosModal"><i class=" fab
+                                fa-apple"></i></a>
+                        </li>
+
+                        <div class="modal fade" id="iosModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <p class="lead text-center">
+                                            <i class="fab fa-apple"></i><br>
+                                            <b>ios App COMING SOON</b>
+                                        </p>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="modal" data-target="#apkModal"><i
+                                    class="fab fa-android"></i></a>
+                        </li>
+                        <div class="modal fade" id="apkModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <p class="lead text-center">
+                                            <i class="fab fa-android" style="color: lime;"></i><br>
+                                            <b>Android App COMING SOON</b>
+                                        </p>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </ul>
 
                 </div>
@@ -107,25 +166,41 @@
                             <div class="modal-body">
                                 <form>
                                     <div class="form-group">
-                                        <label for="InputEmail">Email address</label>
-                                        <input type="email" placeholder="Enter your email" class="form-control"
-                                            id="InputEmail" aria-describedby="emailHelp">
-                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email
-                                            with anyone else.</small>
+                                        <div class="form-group">
+                                            <label class="text-capitalize" for="InputPhone">Phone Number</label>
+                                            <input type="tel" placeholder="Enter phone" class="form-control"
+                                                id="InputPhone">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-capitalize" for="InputAddress">Pick up address</label>
+                                            <input type="text" placeholder="Enter pick up address" class="form-control"
+                                                id="InputAddress">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-capitalize" for="InputParcel">Type of parcel</label>
+                                            <input type="text" placeholder="Enter type of parcel" class="form-control"
+                                                id="InputParcel">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-capitalize" for="DeliveryAddress">Delivery
+                                                address</label>
+                                            <input type="text" placeholder="Enter pick up address" class="form-control"
+                                                id="DeliveryAddress">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-capitalize" for="InputName">Recipient name</label>
+                                            <input type="text" placeholder="Enter name" class="form-control"
+                                                id="InputName">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-capitalize" for="InputRecipientPhone">Recipient phone
+                                                number</label>
+                                            <input type="tel" placeholder="Enter phone" class="form-control"
+                                                id="InputRecipientPhone">
+                                        </div>
+
                                     </div>
-                                    <div class="form-group">
-                                        <label for="InputName">name</label>
-                                        <input type="text" placeholder="Enter name" class="form-control" id="InputName">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="InputPhone">Phone Number</label>
-                                        <input type="tel" placeholder="Enter phone" class="form-control"
-                                            id="InputPhone">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="InputMessage">Message Request</label>
-                                        <textarea class="form-control" id="InputMessage">your message</textarea>
-                                    </div>
+
 
                             </div>
                             <div class="modal-footer">
@@ -141,7 +216,7 @@
             <!-- s1-a -->
             <div class="jumbotron bg-transparent m-0 mt-5 mb-5 rounded-0 s1-a">
                 <div class="jumbotron bg-transparent p-0 rounded-0">
-                    <p class="innovation m-0 p-0 xx">iNNOVATIVE</p>
+                    <p class="innovation m-0 p-0 xx text-uppercase">Loremipsum</p>
                     <div class="jumbotron bg-transparent mb-0 p-0 innovate-inner-div d-flex justify-content-md-center">
                         <div class="jumbotron bg-transparent col-9 rounded-0 row p-0">
                             <div
@@ -177,10 +252,8 @@
                 <div class="jumbotron bg-transparent s2-inner">
                     <div class="jumbotron bg-transparent p-3 pic-right">
                         <div class="jumbotron bg-transparent p-2 right-text-con">
-                            <p class="lead font-weight-bold pics-lead">FASTEST DISPATCH </p>
-                            <span>outlet just at your door step in
-                                the city of Lagos.
-                                Your parcel gets to it’s destination timely.</span>
+                            <p class="lead font-weight-bold pics-lead text-uppercase">Food delivery</p>
+                            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, fugit.</span>
                         </div>
                         <div class="jumbotron bg-transparent p-1 m-0 right-img-con">
                             <i class="fa fa-plane"></i>
@@ -191,7 +264,7 @@
                             <i class="fa fa-ship"></i>
                         </div>
                         <div class="jumbotron bg-transparent p-2 left-text-con">
-                            <p class="lead font-weight-bold pics-lead">Lorem, ipsum dolor.</p>
+                            <p class="lead font-weight-bold pics-lead text-uppercase">gift delivery</p>
                             <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto in praesentium dicta
                                 ut
                                 totam, pariatur quibusdam cupiditate consequatur eum debitis!</span>
@@ -200,7 +273,7 @@
                     </div>
                     <div class="jumbotron bg-transparent p-3 pic-right">
                         <div class="jumbotron bg-transparent p-2 right-text-con">
-                            <p class="lead font-weight-bold pics-lead">Lorem, ipsum dolor.</p>
+                            <p class="lead font-weight-bold pics-lead text-uppercase">Lorem, ipsum dolor.</p>
                             <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto in praesentium dicta
                                 ut
                                 totam, pariatur quibusdam cupiditate consequatur eum debitis!</span>
@@ -214,7 +287,7 @@
                             <i class="fa fa-motorcycle"></i>
                         </div>
                         <div class="jumbotron bg-transparent p-2 left-text-con">
-                            <p class="lead font-weight-bold pics-lead">Lorem, ipsum dolor.</p>
+                            <p class="lead font-weight-bold pics-lead text-uppercase">Lorem, ipsum dolor.</p>
                             <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto in praesentium dicta
                                 ut
                                 totam, pariatur quibusdam cupiditate consequatur eum debitis!</span>
@@ -229,7 +302,7 @@
             <div class="jumbotron rounded-0 p-0 m-0 s3">
                 <div class="jumbotron rounded-0 m-0 s3-flex">
 
-                    <p class="lead text-uppercase">How to use JFL Service</p>
+                    <p class="lead text-uppercase how-to-lead">How to use JFL Service</p>
                     <!-- <div class="jumbotron bg-transparent rounded-0 p-4 m-0 about-text-div">
 
                         <div>
@@ -248,7 +321,55 @@
 
                     <div class="jumbotron bg-transparent rounded-0 p-2 m-0 about-list-div">
 
-                        <ul class="list-group list-group-horizontal">
+                        <div class="d-flex justify-content-start">
+                            <ul class="list-group">
+                                <a href="#col1" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
+                                    data-target="#col1">
+                                    <p class="m-0 font-weight-bold">Step 1</p>
+                                    <div id="col1" class="collapse">
+                                        <span class="collapse-text">
+                                            Lorem ipsum dolor sit amet.
+                                        </span>
+                                    </div>
+
+                                </a>
+
+                            </ul>
+
+
+                            <ul class="list-group">
+
+                                <a href="#col2" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
+                                    data-target="#col2">
+                                    <p class="m-0 font-weight-bold">Step 2</p>
+                                    <div id="col2" class="collapse">
+                                        <span class="collapse-text">
+                                            Lorem ipsum dolor sit amet.
+                                        </span>
+                                    </div>
+
+                                </a>
+
+
+
+                            </ul>
+
+                            <ul class="list-group">
+
+                                <a href="#col3" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
+                                    data-target="#col3">
+                                    <p class="m-0 font-weight-bold">Step 3</p>
+                                    <div id="col3" class="collapse">
+                                        <span class="collapse-text"> Lorem ipsum dolor sit amet.
+                                        </span>
+
+                                    </div>
+
+                                </a>
+
+                            </ul>
+                        </div>
+                        <!-- <ul class="list-group">
                             <a href="#col1" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
                                 data-target="#col1">
                                 <p class="m-0 font-weight-bold">Step 1</p>
@@ -281,22 +402,21 @@
 
                             </a>
 
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
             </div>
             <div class="jumbotron bg-transparent s4">
                 <div class="jumbotron bg-transparent m-0 mb-2 p-3">
                     <p class="lead font-weight-bold lead-box-section">
-                        Lorem ipsum dolor sit
+                        Why Us
                     </p>
-                    <h6 class="lead-box-span small">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
-                        qui.</h6>
+                    <h6 class="lead-box-span small">introducing features that make us the service to use</h6>
                 </div>
                 <div class="s4-inner">
-                    <div class="jumbotron bg-transparent s4-boxes">
+                    <div class="jumbotron bg-transparent s4-boxes shadow-lg">
                         <i class="fa fa-bolt"></i>
-                        <p>Lorem ipsum dolor sit.</p>
+                        <p>On-time response</p>
                         <span>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae cumque modi sequi
                             porro,
@@ -304,9 +424,9 @@
                             molestiae doloribus. Porro adipisci voluptatum architecto.
                         </span>
                     </div>
-                    <div class="jumbotron bg-transparent s4-boxes">
+                    <div class="jumbotron bg-transparent s4-boxes shadow-lg">
                         <i class="fa fa-gift"></i>
-                        <p>Lorem ipsum dolor sit.</p>
+                        <p>Excellent packaging</p>
                         <span>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae cumque modi sequi
                             porro,
@@ -314,9 +434,9 @@
                             molestiae doloribus. Porro adipisci voluptatum architecto.
                         </span>
                     </div>
-                    <div class="jumbotron bg-transparent s4-boxes">
+                    <div class="jumbotron bg-transparent s4-boxes shadow-lg">
                         <i class="fa fa-map-marker-alt"></i>
-                        <p>Lorem ipsum dolor sit.</p>
+                        <p>On-spot delivery</p>
                         <span>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae cumque modi sequi
                             porro,
@@ -324,19 +444,10 @@
                             molestiae doloribus. Porro adipisci voluptatum architecto.
                         </span>
                     </div>
-                    <div class="jumbotron bg-transparent s4-boxes">
-                        <i class="fa fa-shield-alt"></i>
-                        <p>Lorem ipsum dolor sit.</p>
-                        <span>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae cumque modi sequi
-                            porro,
-                            earum
-                            molestiae doloribus. Porro adipisci voluptatum architecto.
-                        </span>
-                    </div>
-                    <div class="jumbotron bg-transparent s4-boxes">
+
+                    <div class="jumbotron bg-transparent s4-boxes shadow-lg">
                         <i class="fa fa-headphones"></i>
-                        <p>Lorem ipsum dolor sit.</p>
+                        <p>24/7 support systems</p>
                         <span>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae cumque modi sequi
                             porro,
@@ -344,16 +455,7 @@
                             molestiae doloribus. Porro adipisci voluptatum architecto.
                         </span>
                     </div>
-                    <div class="jumbotron bg-transparent s4-boxes">
-                        <i class="fa fa-map-signs"></i>
-                        <p>Lorem ipsum dolor sit.</p>
-                        <span>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae cumque modi sequi
-                            porro,
-                            earum
-                            molestiae doloribus. Porro adipisci voluptatum architecto.
-                        </span>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -365,48 +467,6 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing.</span>
         </div>
         <div class="jumbotron rounded-0 m-0 p-2 px-0 footer-super">
-            <div class="footer-flex">
-                <div class="jumbotron bg-transparent mb-0 p-4 footer-brand-con rounded-0">
-                    <a class="foot-brand bg-transparent" href="#"><img class="img-fluid"
-                            src="./images/IMG-20200806-WA0051.jpg"></a>
-                </div>
-                <div class="jumbotron bg-transparent mb-0 p-1 footer-nav-con rounded-0">
-                    <div class="jumbotron bg-transparent m-0 mx-sm-3 p-2">
-                        <ul class="list-group ">
-
-
-                            <li class="list-group-item bg-transparent text-white m-0 border-0 p-2"><i
-                                    class="fa fa-phone"></i><span class="mx-1 text-capitalize">+234telephone</span>
-                            </li>
-                            <li class="list-group-item bg-transparent text-white m-0 border-0 p-2"><i
-                                    class="fa fa-mobile-alt"></i><span class="mx-1 text-capitalize">081mobile</span>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="jumbotron bg-transparent m-0 mx-sm-3 p-2">
-                        <ul class="list-group list-group-horizontal">
-
-
-                            <a onclick="scrollToService()"
-                                class="list-group-item bg-transparent text-white p-0 m-0 border-0 p-2"><span
-                                    class="text-capitalize">Cookie Policy</span>
-                            </a>
-                            <a onclick="scrollToInfo()"
-                                class="list-group-item bg-transparent text-white p-0 m-0 border-0 p-2"></i><span
-                                    class="text-capitalize">FAQ</span>
-                            </a>
-                            <a onclick="scrollToContact()"
-                                class="list-group-item bg-transparent text-white p-0 m-0 border-0 p-2"></i><span
-                                    class="text-capitalize">Support</span>
-                            </a>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <hr style="background-color: white;">
-
             <p class="text-center text-white m-0 all-rights">Copyright &copy; 2020 Brand name | All rights reserved.</p>
             <p class="text-right text-white m-0 powered">Powered By Tekagon</p>
         </div>
