@@ -8,7 +8,7 @@ html {
 
 body {
     /* background-color:#183349; */
-    background: rgb(255, 245, 245) !important;
+    background: rgb(248, 247, 247) !important;
     margin: 0px;
     font-size: 100%;
     width: 100%;
@@ -55,7 +55,7 @@ body {
 
 
 .s1 {
-    height: 70vh !important;
+    height: 100vh !important;
     background-image: url("/images/Abstract\ picture.jpg") !important;
     background-position: center;
     background-size: 100% 100%;
@@ -64,7 +64,7 @@ body {
 
 
 .s1-overlay {
-    background: #ff494c62;
+    /* background: #cfcfcfa1; */
     height: inherit;
     width: inherit;
     display: flex;
@@ -482,6 +482,10 @@ body {
         font-weight: bold;
     }
 
+    .request {
+        color: #FE3260;
+    }
+
     .intro-text {
         font-size: 160%;
     }
@@ -676,6 +680,7 @@ body {
     .request {
         padding: 10px !important;
         width: auto;
+        color: white;
     }
 
     .s1-a {
@@ -945,7 +950,7 @@ body {
         left: 0px;
     }
 
-    .pics-lead{
+    .pics-lead {
         font-size: 100%;
     }
 
