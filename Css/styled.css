@@ -56,7 +56,7 @@ body {
 
 .s1 {
     height: 100vh !important;
-    background-image: url("/images/Abstract\ picture.jpg") !important;
+    background-image: url("../images/Abstract\ picture.jpg") !important;
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -181,7 +181,7 @@ body {
 }
 
 .img-con {
-    background-image: url("/images/delivery-service-with-masks-concept_23-2148497067.jpg") !important;
+    background-image: url("../images/delivery-service-with-masks-concept_23-2148497067.jpg") !important;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -254,7 +254,7 @@ body {
     /* border: 1px solid red; */
     padding: 50px !important;
     height: 100%;
-    background-image: url("/images/intro-mobile.png") !important;
+    background-image: url("../images/intro-mobile.png") !important;
     background-position: right;
     background-size: 40% 100%;
     background-repeat: no-repeat;
