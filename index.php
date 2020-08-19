@@ -49,8 +49,11 @@
     <!-- super container -->
     <div class="container-fluid p-0">
 
+        <!-- nav container -->
         <div class="container bg-transparent">
+            <!-- nav -->
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <!-- nav brand image -->
                 <a class="navbar-brand bg-transparent" href="#"><img class="img-fluid"
                         src="./images/IMG-20200806-WA0051.jpg"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -58,7 +61,7 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                <!-- nav lists container -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
@@ -134,6 +137,8 @@
                 </div>
             </nav>
         </div>
+
+        <!-- container for first section -->
         <div class="container-fluid p-0">
 
             <!-- section 1 -->
@@ -147,6 +152,7 @@
                         Think US,<br>
 
                     </p>
+                    <!-- section 1 big button -->
                     <button class="btn btn-primary request" data-toggle="modal" data-target="#exampleModal">Contact
                         Sales</button>
                 </div>
@@ -156,13 +162,16 @@
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
+                        <!-- modal content -->
                         <div class="modal-content">
+                            <!-- modal head -->
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Request Dispatch</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
+                            <!-- modal body -->
                             <div class="modal-body">
                                 <form>
                                     <div class="form-group">
@@ -203,6 +212,7 @@
 
 
                             </div>
+                            <!-- modal footer -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary">Request dispatch</button>
@@ -213,23 +223,27 @@
                 </div>
             </div>
         </div>
+        <!-- hr divide line -->
         <hr class="mb-0" style="width: 100%; position: absolute; left: 0; height: 30px;">
         <div class="container">
-            <!-- s1-a -->
+            <!-- s1-a (below section 1)-->
             <div class="jumbotron bg-transparent m-0 mt-5 mb-5 rounded-0 s1-a">
                 <div class="jumbotron bg-transparent p-0 rounded-0">
+                    <!-- very big text -->
                     <p class="innovation m-0 p-0 xx text-uppercase">Loremipsum</p>
                     <div class="jumbotron bg-transparent mb-0 p-0 innovate-inner-div d-flex justify-content-md-center">
                         <div class="jumbotron bg-transparent col-9 rounded-0 row p-0">
                             <div
                                 class="jumbotron img-text-con con mb-0 p-2 bg-transparent d-flex justify-content-sm-between">
-
+                                <!-- overlay image -->
                                 <div class="jumbotron mb-0 bg-transparent img-con">
 
                                 </div>
                                 <p class="lead text-white mt-0 mb-0 text-con-text">
                                     <span class="intro-text">Lorem, ipsum</span><br>
-                                    <span class="intro-more">Lorem ipsum dolor sit</span><svg width="15" height="15">
+                                    <span class="intro-more">Lorem ipsum dolor sit</span>
+                                    <!-- dot on text -->
+                                    <svg width="15" height="15">
                                         <circle cx="7" cy="7" r="5" stroke="none" stroke-width="1"
                                             fill="var(--draw-color)">
                                     </svg><br>
@@ -239,6 +253,7 @@
                                     </span>
                                 </p>
                             </div>
+                            <!-- colored div over-layed on big text -->
                             <div class="jumbotron dummy-con mb-0">
 
                             </div>
@@ -249,9 +264,14 @@
 
             </div>
 
+
+            <!-- section 2 -->
             <div class="jumbotron bg-transparent p-3 s2">
+                <!-- section 2 introduction text -->
                 <p class="text-center font-weight-bold lead text-uppercase">Our service Offering</p>
+                <!-- flexed container -->
                 <div class="jumbotron bg-transparent s2-inner">
+                    <!-- picture on right flex -->
                     <div class="jumbotron bg-transparent p-3 pic-right">
                         <div class="jumbotron bg-transparent p-2 right-text-con">
                             <p class="lead font-weight-bold pics-lead text-uppercase">Food delivery</p>
@@ -261,6 +281,7 @@
                             <i class="fa fa-plane"></i>
                         </div>
                     </div>
+                    <!-- picture on left flex -->
                     <div class="jumbotron bg-transparent p-3 pic-left">
                         <div class="jumbotron bg-transparent p-1 m-0 left-img-con">
                             <i class="fa fa-ship"></i>
@@ -273,6 +294,7 @@
                         </div>
 
                     </div>
+                    <!-- picture on right flex -->
                     <div class="jumbotron bg-transparent p-3 pic-right">
                         <div class="jumbotron bg-transparent p-2 right-text-con">
                             <p class="lead font-weight-bold pics-lead text-uppercase">Lorem, ipsum dolor.</p>
@@ -284,6 +306,7 @@
                             <i class="fa fa-truck"></i>
                         </div>
                     </div>
+                    <!-- picture on left flex -->
                     <div class="jumbotron bg-transparent p-3 pic-left">
                         <div class="jumbotron bg-transparent p-1 m-0 left-img-con">
                             <i class="fa fa-motorcycle"></i>
@@ -299,30 +322,18 @@
                 </div>
             </div>
         </div>
+        <!-- hr divide line -->
         <hr>
+        <!-- container for s3 -->
         <div class="container">
+        <!-- section 3 -->
             <div class="jumbotron rounded-0 p-0 m-0 s3">
                 <div class="jumbotron rounded-0 m-0 s3-flex">
 
                     <p class="lead text-uppercase how-to-lead">How to use JFL Service</p>
-                    <!-- <div class="jumbotron bg-transparent rounded-0 p-4 m-0 about-text-div">
-
-                        <div>
-                            <p class="lead mb-0 about-company">About Our Company</p>
-                            <p class="m-0 about-texts">JEFFCRANE LOGISTICS, is Africa’s fastest growing dispatch Company
-                                in
-                                the heart of Lagos, Nigeria.
-
-                                We offer timely, efficient and affordable services within the city of Lagos. From
-                                door-to-door delivery, to Company-to-Client delivery.<br> JEFFCRANE LOGISTICS, is all
-                                you need
-                                to meet your dispatch needs.
-                            </p>
-                        </div>
-                    </div> -->
-
                     <div class="jumbotron bg-transparent rounded-0 p-2 m-0 about-list-div">
 
+                        <!-- accordion container -->
                         <div class="d-flex justify-content-start">
                             <ul class="list-group">
                                 <a href="#col1" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
@@ -371,51 +382,21 @@
 
                             </ul>
                         </div>
-                        <!-- <ul class="list-group">
-                            <a href="#col1" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
-                                data-target="#col1">
-                                <p class="m-0 font-weight-bold">Step 1</p>
-                                <div id="col1" class="collapse">
-                                    <span class="collapse-text">
-                                        Lorem ipsum dolor sit amet.
-                                    </span>
-                                </div>
 
-                            </a>
-                            <a href="#col2" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
-                                data-target="#col2">
-                                <p class="m-0 font-weight-bold">Step 2</p>
-                                <div id="col2" class="collapse">
-                                    <span class="collapse-text">
-                                        Lorem ipsum dolor sit amet.
-                                    </span>
-                                </div>
-
-                            </a>
-
-                            <a href="#col3" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
-                                data-target="#col3">
-                                <p class="m-0 font-weight-bold">Step 3</p>
-                                <div id="col3" class="collapse">
-                                    <span class="collapse-text"> Lorem ipsum dolor sit amet.
-                                    </span>
-
-                                </div>
-
-                            </a>
-
-                        </ul> -->
                     </div>
                 </div>
             </div>
+            <!-- section 4 -->
             <div class="jumbotron bg-transparent s4">
                 <div class="jumbotron bg-transparent m-0 mb-2 p-3">
+                <!-- section 4 introduction -->
                     <p class="lead font-weight-bold lead-box-section">
                         Why Us
                     </p>
                     <h6 class="lead-box-span small">introducing features that make us the service to use</h6>
                 </div>
                 <div class="s4-inner">
+                <!-- boxes -->
                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
                         <i class="fa fa-bolt"></i>
                         <p>On-time response</p>
@@ -426,6 +407,7 @@
                             molestiae doloribus. Porro adipisci voluptatum architecto.
                         </span>
                     </div>
+                <!-- boxes -->
                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
                         <i class="fa fa-gift"></i>
                         <p>Excellent packaging</p>
@@ -436,6 +418,7 @@
                             molestiae doloribus. Porro adipisci voluptatum architecto.
                         </span>
                     </div>
+                <!-- boxes -->
                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
                         <i class="fa fa-map-marker-alt"></i>
                         <p>On-spot delivery</p>
@@ -446,7 +429,7 @@
                             molestiae doloribus. Porro adipisci voluptatum architecto.
                         </span>
                     </div>
-
+                <!-- boxes -->
                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
                         <i class="fa fa-headphones"></i>
                         <p>24/7 support systems</p>
@@ -461,6 +444,7 @@
                 </div>
             </div>
         </div>
+        <!-- section 5 -->
         <div class="jumbotron bg-transparent rounded-0 m-0 s5 border">
             <p class="mb-2 go-text">
                 Lorem ipsum dolor sit.
@@ -468,6 +452,7 @@
             <span class="go-span">
                 Lorem ipsum dolor sit amet, consectetur adipisicing.</span>
         </div>
+        <!-- footer -->
         <div class="jumbotron rounded-0 m-0 p-2 px-0 footer-super">
             <p class="text-center text-white m-0 all-rights">Copyright &copy; 2020 Brand name | All rights reserved.</p>
             <p class="text-right text-white m-0 powered">Powered By Tekagon</p>
