@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+ <?php 
+require("process.php") 
+?>
+<html>
+
 
 <head>
     <title>Logistics</title>
@@ -49,7 +52,7 @@
     <!-- super container -->
     <div class="container-fluid p-0">
 
-        <!-- nav container -->
+        <!-- nav container -->`
         <div class="container bg-transparent">
             <!-- nav -->
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
@@ -145,16 +148,11 @@
             <div class="jumbotron m-0 rounded-0 s1 p-0">
                 <div class="s1-overlay">
                     <p class="s1-text text-uppercase">
-                        Save TIME.<br>
-                        Affordable<br>
-                        Reliable<br>
-
-                        Think US,<br>
+                       Africa’s fastest growing last mile delivery Company in the heart of Lagos, Nigeria.
 
                     </p>
                     <!-- section 1 big button -->
-                    <button class="btn btn-primary request" data-toggle="modal" data-target="#exampleModal">Contact
-                        Sales</button>
+                    <button class="btn btn-primary request" data-toggle="modal" data-target="#exampleModal">Request a dispatch</button>
                 </div>
 
 
@@ -173,39 +171,45 @@
                             </div>
                             <!-- modal body -->
                             <div class="modal-body">
-                                <form>
+                                <form id="request_form" method="POST" action="<?=$_SERVER['PHP_SELF'];?>">
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label class="text-capitalize" for="InputPhone">Phone Number</label>
+                                            <br><span class="text-danger"><?=$phone_error?></span>
                                             <input type="tel" placeholder="Enter phone" class="form-control"
-                                                id="InputPhone">
+                                                id="InputPhone" name="phone">
                                         </div>
                                         <div class="form-group">
                                             <label class="text-capitalize" for="InputAddress">Pick up address</label>
+                                            <br><span class="text-danger"><?=$address_error?></span>
                                             <input type="text" placeholder="Enter pick up address" class="form-control"
-                                                id="InputAddress">
+                                                id="InputAddress" name="address">
                                         </div>
                                         <div class="form-group">
                                             <label class="text-capitalize" for="InputParcel">Type of parcel</label>
+                                            <br><span class="text-danger"><?=$type_of_parcel_error?></span>
                                             <input type="text" placeholder="Enter type of parcel" class="form-control"
-                                                id="InputParcel">
+                                                id="InputParcel" name="type_of_parcel">
                                         </div>
                                         <div class="form-group">
                                             <label class="text-capitalize" for="DeliveryAddress">Delivery
                                                 address</label>
+                                            <br><span class="text-danger"><?=$delivery_address_error?></span>
                                             <input type="text" placeholder="Enter pick up address" class="form-control"
-                                                id="DeliveryAddress">
+                                                id="DeliveryAddress" name="delivery_address">
                                         </div>
                                         <div class="form-group">
                                             <label class="text-capitalize" for="InputName">Recipient name</label>
+                                            <br><span class="text-danger"><?=$recipient_name_error?></span>
                                             <input type="text" placeholder="Enter name" class="form-control"
-                                                id="InputName">
+                                                id="InputName"name="recipient_name">
                                         </div>
                                         <div class="form-group">
                                             <label class="text-capitalize" for="InputRecipientPhone">Recipient phone
                                                 number</label>
+                                            <br><span class="text-danger"><?=$recipient_phone_error?></span>
                                             <input type="tel" placeholder="Enter phone" class="form-control"
-                                                id="InputRecipientPhone">
+                                                id="InputRecipientPhone" name="recipient_phone">
                                         </div>
 
                                     </div>
@@ -215,7 +219,7 @@
                             <!-- modal footer -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Request dispatch</button>
+                                <button type="submit" class="btn btn-primary" name="requestDispatch">Request dispatch</button>
                             </div>
                             </form>
                         </div>
@@ -247,9 +251,7 @@
                                         <circle cx="7" cy="7" r="5" stroke="none" stroke-width="1"
                                             fill="var(--draw-color)">
                                     </svg><br>
-                                    <span class="intro-graph">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                        Corrupti molestias quod ab deleniti quisquam ullam quos beatae quidem eligendi
-                                        modi?
+                                    <span class="intro-graph">We offer timely, efficient, and affordable services within the city of Lagos. From door-to-door delivery, to Company-to-Client delivery.
                                     </span>
                                 </p>
                             </div>
@@ -268,70 +270,88 @@
             <!-- section 2 -->
             <div class="jumbotron bg-transparent p-3 s2">
                 <!-- section 2 introduction text -->
-                <p class="text-center font-weight-bold lead text-uppercase">Our service Offering</p>
+                <p class="text-center font-weight-bold lead mb-1 text-uppercase">Our service Offering</p>
+                <p class="text-center m-1 small">…We are all You need to meet your dispatch needs.</p>
                 <!-- flexed container -->
                 <div class="jumbotron bg-transparent s2-inner">
                     <!-- picture on right flex -->
                     <div class="jumbotron bg-transparent p-3 pic-right">
                         <div class="jumbotron bg-transparent p-2 right-text-con">
-                            <p class="lead font-weight-bold pics-lead text-uppercase">Food delivery</p>
-                            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, fugit.</span>
+                            <p class="lead font-weight-bold pics-lead text-uppercase">Personal items</p>
+                            <span>
+JFL offers you the dispatch of your personal parcels relieving you the hassle of doing so.</span>
                         </div>
                         <div class="jumbotron bg-transparent p-1 m-0 right-img-con">
-                            <i class="fa fa-plane"></i>
+                            <i class="fa fa-gift"></i>
                         </div>
                     </div>
                     <!-- picture on left flex -->
                     <div class="jumbotron bg-transparent p-3 pic-left">
                         <div class="jumbotron bg-transparent p-1 m-0 left-img-con">
-                            <i class="fa fa-ship"></i>
+                            <i class="fa fa-file"></i>
                         </div>
                         <div class="jumbotron bg-transparent p-2 left-text-con">
-                            <p class="lead font-weight-bold pics-lead text-uppercase">gift delivery</p>
-                            <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto in praesentium dicta
-                                ut
-                                totam, pariatur quibusdam cupiditate consequatur eum debitis!</span>
+                            <p class="lead font-weight-bold pics-lead text-uppercase">Delicate/Classified Documents</p>
+                            <span>
+Your sensitive documents are secured with us for dispatch.</span>
                         </div>
 
                     </div>
                     <!-- picture on right flex -->
                     <div class="jumbotron bg-transparent p-3 pic-right">
                         <div class="jumbotron bg-transparent p-2 right-text-con">
-                            <p class="lead font-weight-bold pics-lead text-uppercase">Lorem, ipsum dolor.</p>
-                            <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto in praesentium dicta
-                                ut
-                                totam, pariatur quibusdam cupiditate consequatur eum debitis!</span>
+                            <p class="lead font-weight-bold pics-lead text-uppercase">Enterprise/Business Packages.</p>
+                            <span>
+We offer companies dispatch services, proficiently ensuring that products get to its end users.</span>
                         </div>
                         <div class="jumbotron bg-transparent p-1 m-0 right-img-con">
-                            <i class="fa fa-truck"></i>
+                            <i class="fa fa-archive"></i>
                         </div>
                     </div>
                     <!-- picture on left flex -->
                     <div class="jumbotron bg-transparent p-3 pic-left">
                         <div class="jumbotron bg-transparent p-1 m-0 left-img-con">
-                            <i class="fa fa-motorcycle"></i>
+                            <i class="fa fa-cubes"></i>
                         </div>
                         <div class="jumbotron bg-transparent p-2 left-text-con">
-                            <p class="lead font-weight-bold pics-lead text-uppercase">Lorem, ipsum dolor.</p>
-                            <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto in praesentium dicta
-                                ut
-                                totam, pariatur quibusdam cupiditate consequatur eum debitis!</span>
+                            <p class="lead font-weight-bold pics-lead text-uppercase">Outsourcing.</p>
+                            <span>
+                                JFL We help you focus on production while transporting your goods.</span>
+                            </div>
+                            
                         </div>
-
+                    </div>
+                    <!-- picture on right flex -->
+                    <div class="jumbotron bg-transparent p-3 pic-right">
+                        <div class="jumbotron bg-transparent p-2 right-text-con">
+                            <p class="lead font-weight-bold pics-lead text-uppercase">Small Business Products</p>
+                            <span>
+We provide small business owners the luxury of easy and quick delivery of their product.</span>
+                        </div>
+                        <div class="jumbotron bg-transparent p-1 m-0 right-img-con">
+                            <i class="fa fa-truck"></i>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- hr divide line -->
+            <!-- hr divide line -->
         <hr>
         <!-- container for s3 -->
         <div class="container">
-        <!-- section 3 -->
+            <!-- section 3 -->
             <div class="jumbotron rounded-0 p-0 m-0 s3">
                 <div class="jumbotron rounded-0 m-0 s3-flex">
 
                     <p class="lead text-uppercase how-to-lead">How to use JFL Service</p>
                     <div class="jumbotron bg-transparent rounded-0 p-2 m-0 about-list-div">
+
+
+<!-- 
+                    Login into the website or download the application.
+➢ Select the 'Book Now’ option.
+➢ Fill the required form.
+➢ A call would be put through to you for confirmation.
+➢ In less than 5minutes, a dispatch rider would get the package and have it delivered to. -->
 
                         <!-- accordion container -->
                         <div class="d-flex justify-content-start">
@@ -340,8 +360,7 @@
                                     data-target="#col1">
                                     <p class="m-0 font-weight-bold">Step 1</p>
                                     <div id="col1" class="collapse">
-                                        <span class="collapse-text">
-                                            Lorem ipsum dolor sit amet.
+                                        <span class="collapse-text">visit our website or download the app, click the 'Request a Dispatch’ button.
                                         </span>
                                     </div>
 
@@ -356,8 +375,7 @@
                                     data-target="#col2">
                                     <p class="m-0 font-weight-bold">Step 2</p>
                                     <div id="col2" class="collapse">
-                                        <span class="collapse-text">
-                                            Lorem ipsum dolor sit amet.
+                                        <span class="collapse-text">Fill the dispatch form. We will receive your request and process it through a confirmation call.
                                         </span>
                                     </div>
 
@@ -373,7 +391,7 @@
                                     data-target="#col3">
                                     <p class="m-0 font-weight-bold">Step 3</p>
                                     <div id="col3" class="collapse">
-                                        <span class="collapse-text"> Lorem ipsum dolor sit amet.
+                                        <span class="collapse-text"> In a moment, the package will be on the way to be delivered.
                                         </span>
 
                                     </div>
@@ -389,55 +407,57 @@
             <!-- section 4 -->
             <div class="jumbotron bg-transparent s4">
                 <div class="jumbotron bg-transparent m-0 mb-2 p-3">
-                <!-- section 4 introduction -->
+                    <!-- section 4 introduction -->
                     <p class="lead font-weight-bold lead-box-section">
                         Why Us
                     </p>
                     <h6 class="lead-box-span small">introducing features that make us the service to use</h6>
                 </div>
                 <div class="s4-inner">
-                <!-- boxes -->
+                    <!-- boxes -->
                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
                         <i class="fa fa-bolt"></i>
                         <p>On-time response</p>
                         <span>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae cumque modi sequi
-                            porro,
-                            earum
-                            molestiae doloribus. Porro adipisci voluptatum architecto.
+                           Speedy delivery you can trust always
                         </span>
                     </div>
-                <!-- boxes -->
+                    <!-- boxes -->
                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
                         <i class="fa fa-gift"></i>
                         <p>Excellent packaging</p>
                         <span>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae cumque modi sequi
-                            porro,
-                            earum
-                            molestiae doloribus. Porro adipisci voluptatum architecto.
+                           Your parcels can fit into our boxes.
                         </span>
                     </div>
-                <!-- boxes -->
+                    <!-- boxes -->
                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
                         <i class="fa fa-map-marker-alt"></i>
                         <p>On-spot delivery</p>
                         <span>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae cumque modi sequi
-                            porro,
-                            earum
-                            molestiae doloribus. Porro adipisci voluptatum architecto.
+                           Track your parcels, on the go.
                         </span>
                     </div>
-                <!-- boxes -->
+                    <!-- boxes -->
+                    <div class="jumbotron bg-transparent s4-boxes shadow-lg">
+                        <i class="fa fa-heart"></i>
+                        <p>Great user experience</p>
+                        <span>
+                           Get the best costumer experience for less
+                        </span>
+                    </div>
+                    <!-- boxes -->
+                    <div class="jumbotron bg-transparent s4-boxes shadow-lg">
+                        <i class="fa fa-shield-alt"></i>
+                        <p>24/7 support systems</p>
+                        <span>At your service via phone, chat or email.
+                        </span>
+                    </div>
+                    <!-- boxes -->
                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
                         <i class="fa fa-headphones"></i>
                         <p>24/7 support systems</p>
-                        <span>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae cumque modi sequi
-                            porro,
-                            earum
-                            molestiae doloribus. Porro adipisci voluptatum architecto.
+                        <span>At your service via phone, chat or email.
                         </span>
                     </div>
 
@@ -446,11 +466,9 @@
         </div>
         <!-- section 5 -->
         <div class="jumbotron bg-transparent rounded-0 m-0 s5 border">
-            <p class="mb-2 go-text">
-                Lorem ipsum dolor sit.
+            <p class="mb-2 go-text">JFL LOGISTICS
             </p>
-            <span class="go-span">
-                Lorem ipsum dolor sit amet, consectetur adipisicing.</span>
+            <span class="go-span">meeting your every dispatch need.</span>
         </div>
         <!-- footer -->
         <div class="jumbotron rounded-0 m-0 p-2 px-0 footer-super">

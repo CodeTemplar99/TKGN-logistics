@@ -81,6 +81,7 @@ body {
         cursive;
     font-size: 300%;
     margin: 30px;
+    width: 80vh;
     text-align: center !important;
     font-weight: bold;
     color: white;
@@ -243,7 +244,7 @@ body {
 
 .right-img-con .fa,
 .left-img-con .fa {
-    font-size: 400%;
+    font-size: 700%;
     color: #FF494D;
 }
 
@@ -251,6 +252,7 @@ body {
 .s3 {
     position: relative;
     height: auto;
+    max-height: 50vh;
     /* border: 1px solid red; */
     padding: 50px !important;
     height: 100%;
