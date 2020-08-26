@@ -77,15 +77,13 @@ body {
     /* color: white; */
     font-family: 'Fredoka One',
         cursive;
-    font-family: 'Fredoka One',
-        cursive;
     font-size: 300%;
     margin: 30px;
     width: 80vh;
     text-align: center !important;
     font-weight: bold;
-    color: white;
-    text-shadow: 2px 5px 10px #FE3260;
+    color: black;
+    text-shadow: 2px 5px 10px #fe326262;
 }
 
 

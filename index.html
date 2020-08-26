@@ -1,509 +1,560 @@
- <!-- <?php 
-require("process.php") 
+<!-- <?php
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception as MailException;
+
+// Load Composer's autoloader
+require 'vendor/autoload.php';
+
+if (isset($_POST['send']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Instantiation and passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+    $mail->isSMTP();                                            // Send using SMTP
+    $mail->Host       = 'smtp.mailtrap.io';                    // Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = 'fb1379a43cba18';                     // SMTP username
+    $mail->Password   = '3d20bc3f125cf6';                               // SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+    //Recipients
+    $mail->setFrom('Tester@example.com', 'Mailer');
+    $mail->addAddress($_POST['email'], $_POST['name']);     // Add a recipient
+    // $mail->addAddress('ellen@example.com');               // Name is optional
+    $mail->addReplyTo('info@example.com', 'Information');
+    $mail->addCC('cc@example.com');
+    $mail->addBCC('bcc@example.com');
+
+    // Attachments
+    // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+    // Content
+    $mail->isHTML(false);                                  // Set email format to HTML
+    $mail->Subject = 'Here is the subject';
+    $mail->Body    = $_POST['message'];
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (MailException $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+}
+
+
 ?> -->
- <html>
+
+<!DOCTYPE html>
+<html lang="en">
 
 
- <head>
-     <title>Logistics</title>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-     <link href="./icons/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
-     <link href="./Css/styled.css" rel="stylesheet" type="text/css">
-     <!-- font for nav link -->
-     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-     <!-- font for explore button -->
-     <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
-     <!-- font for about texts -->
-     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
-     <!-- font for font for about our company -->
-     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-     <!-- font for  mission statements-->
-     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
-     <!-- font for collapse text -->
-     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@1,300&display=swap"
-         rel="stylesheet">
+<head>
+    <title>Logistics</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="./icons/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+    <link href="./Css/styled.css" rel="stylesheet" type="text/css">
+    <!-- font for nav link -->
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <!-- font for explore button -->
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+    <!-- font for about texts -->
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <!-- font for font for about our company -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <!-- font for  mission statements-->
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <!-- font for collapse text -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@1,300&display=swap"
+        rel="stylesheet">
 
-     <!-- --------- -->
-     <!-- for pics -->
-     <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
-     <!-- for lead s1 -->
-     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-     <!-- for boxes -->
-     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-     <!-- for lead box section -->
+    <!-- --------- -->
+    <!-- for pics -->
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
+    <!-- for lead s1 -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- for boxes -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- for lead box section -->
 
-     <!-- go-text -->
-     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-     <!-- go span -->
-     <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
-     <!-- jquery  -->
-     <script src="./js/jquery-3.4.1.min.js"></script>
-     <!-- bootstrap -->
-     <script src="./bootstrap/js/bootstrap.js"></script>
-     <!-- javascript -->
-     <script defer src="./js/spine.js"></script>
- </head>
-
-
- <body>
-     <!-- super container -->
-     <div class="container-fluid p-0">
-
-         <!-- nav container -->`
-         <div class="container bg-transparent">
-             <!-- nav -->
-             <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-                 <!-- nav brand image -->
-                 <a class="navbar-brand bg-transparent" href="#"><img class="img-fluid"
-                         src="./images/IMG-20200806-WA0051.jpg"></a>
-                 <button class="navbar-toggler" type="button" data-toggle="collapse"
-                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                     aria-label="Toggle navigation">
-                     <span class="navbar-toggler-icon"></span>
-                 </button>
-                 <!-- nav lists container -->
-                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                     <ul class="navbar-nav mr-auto">
-                         <li class="nav-item active">
-                             <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" onclick="scrollToInfo()">About Us</a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" onclick="scrollToService()">Services</a>
-                         </li>
-                         <li class="nav-item dropdown">
-                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                 More
-                             </a>
-                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                 <a class="dropdown-item" href="#">Cookie policy</a>
-                                 <a class="dropdown-item" href="#">FAQ</a>
+    <!-- go-text -->
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <!-- go span -->
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+    <!-- jquery  -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <!-- bootstrap -->
+    <script src="./bootstrap/js/bootstrap.js"></script>
+    <!-- javascript -->
+    <script defer src="./js/spine.js"></script>
+</head>
 
 
-                                 <div class="dropdown-divider"></div>
-                                 <a class="dropdown-item" href="#"><i class="fa fa-phone"></i><span
-                                         class="ml-1 text-capitalize">+234telephone</span>
-                                 </a>
-                                 <a class="dropdown-item" href="#"><i class="fa fa-mobile-alt"></i><span
-                                         class="ml-1 text-capitalize">081mobile</span>
-                                 </a>
-                             </div>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" data-toggle="modal" data-target="#iosModal"><i class=" fab
+<body>
+    <!-- super container -->
+    <div class="container-fluid p-0">
+
+        <!-- nav container -->`
+        <div class="container bg-transparent">
+            <!-- nav -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <!-- nav brand image -->
+                <a class="navbar-brand bg-transparent" href="#"><img class="img-fluid"
+                        src="./images/IMG-20200806-WA0051.jpg"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- nav lists container -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="scrollToInfo()">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="scrollToService()">Services</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                More
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Cookie policy</a>
+                                <a class="dropdown-item" href="#">FAQ</a>
+
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i class="fa fa-phone"></i><span
+                                        class="ml-1 text-capitalize">+234telephone</span>
+                                </a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-mobile-alt"></i><span
+                                        class="ml-1 text-capitalize">081mobile</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="modal" data-target="#iosModal"><i class=" fab
                                 fa-apple"></i></a>
-                         </li>
+                        </li>
 
-                         <div class="modal fade" id="iosModal" tabindex="-1" role="dialog"
-                             aria-labelledby="exampleModalLabel" aria-hidden="true">
-                             <div class="modal-dialog" role="document">
-                                 <div class="modal-content">
-                                     <div class="modal-body">
-                                         <p class="lead text-center">
-                                             <i class="fab fa-apple"></i><br>
-                                             <b>ios App COMING SOON</b>
-                                         </p>
-
-
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                         <li class="nav-item">
-                             <a class="nav-link" data-toggle="modal" data-target="#apkModal"><i
-                                     class="fab fa-android"></i></a>
-                         </li>
-                         <div class="modal fade" id="apkModal" tabindex="-1" role="dialog"
-                             aria-labelledby="exampleModalLabel" aria-hidden="true">
-                             <div class="modal-dialog" role="document">
-                                 <div class="modal-content">
-                                     <div class="modal-body">
-                                         <p class="lead text-center">
-                                             <i class="fab fa-android" style="color: lime;"></i><br>
-                                             <b>Android App COMING SOON</b>
-                                         </p>
+                        <div class="modal fade" id="iosModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <p class="lead text-center">
+                                            <i class="fab fa-apple"></i><br>
+                                            <b>ios App COMING SOON</b>
+                                        </p>
 
 
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-
-                     </ul>
-
-                 </div>
-             </nav>
-         </div>
-
-         <!-- container for first section -->
-         <div class="container-fluid p-0">
-
-             <!-- section 1 -->
-             <div class="jumbotron m-0 rounded-0 s1 p-0">
-                 <div class="s1-overlay">
-                     <p class="s1-text text-uppercase">
-                         Africa’s fastest growing last mile delivery Company in the heart of Lagos, Nigeria.
-
-                     </p>
-                     <!-- section 1 big button -->
-                     <button class="btn btn-primary request" data-toggle="modal" data-target="#exampleModal">Request a
-                         dispatch</button>
-                 </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="modal" data-target="#apkModal"><i
+                                    class="fab fa-android"></i></a>
+                        </li>
+                        <div class="modal fade" id="apkModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <p class="lead text-center">
+                                            <i class="fab fa-android" style="color: lime;"></i><br>
+                                            <b>Android App COMING SOON</b>
+                                        </p>
 
 
-                 <!-- Modal -->
-                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                     <div class="modal-dialog" role="document">
-                         <!-- modal content -->
-                         <div class="modal-content">
-                             <!-- modal head -->
-                             <div class="modal-header">
-                                 <h5 class="modal-title" id="exampleModalLabel">Request Dispatch</h5>
-                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                     <span aria-hidden="true">&times;</span>
-                                 </button>
-                             </div>
-                             <!-- modal body -->
-                             <div class="modal-body">
-                                 <form id="request_form" method="POST" action="<?=$_SERVER['PHP_SELF'];?>">
-                                     <div class="form-group">
-                                         <div class="form-group">
-                                             <label class="text-capitalize" for="InputPhone">Phone Number</label>
-                                             <br><span class="text-danger"><?=$phone_error?></span>
-                                             <input type="tel" placeholder="Enter phone" class="form-control"
-                                                 id="InputPhone" name="phone">
-                                         </div>
-                                         <div class="form-group">
-                                             <label class="text-capitalize" for="InputAddress">Pick up address</label>
-                                             <br><span class="text-danger"><?=$address_error?></span>
-                                             <input type="text" placeholder="Enter pick up address" class="form-control"
-                                                 id="InputAddress" name="address">
-                                         </div>
-                                         <div class="form-group">
-                                             <label class="text-capitalize" for="InputParcel">Type of parcel</label>
-                                             <br><span class="text-danger"><?=$type_of_parcel_error?></span>
-                                             <input type="text" placeholder="Enter type of parcel" class="form-control"
-                                                 id="InputParcel" name="type_of_parcel">
-                                         </div>
-                                         <div class="form-group">
-                                             <label class="text-capitalize" for="DeliveryAddress">Delivery
-                                                 address</label>
-                                             <br><span class="text-danger"><?=$delivery_address_error?></span>
-                                             <input type="text" placeholder="Enter pick up address" class="form-control"
-                                                 id="DeliveryAddress" name="delivery_address">
-                                         </div>
-                                         <div class="form-group">
-                                             <label class="text-capitalize" for="InputName">Recipient name</label>
-                                             <br><span class="text-danger"><?=$recipient_name_error?></span>
-                                             <input type="text" placeholder="Enter name" class="form-control"
-                                                 id="InputName" name="recipient_name">
-                                         </div>
-                                         <div class="form-group">
-                                             <label class="text-capitalize" for="InputRecipientPhone">Recipient phone
-                                                 number</label>
-                                             <br><span class="text-danger"><?=$recipient_phone_error?></span>
-                                             <input type="tel" placeholder="Enter phone" class="form-control"
-                                                 id="InputRecipientPhone" name="recipient_phone">
-                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                     </div>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+
+        <!-- container for first section -->
+        <div class="container-fluid p-0">
+
+            <!-- section 1 -->
+            <div class="jumbotron m-0 rounded-0 s1 p-0">
+                <div class="s1-overlay">
+                    <p class="s1-text text-uppercase">
+                        Africa’s fastest growing last mile delivery Company in the heart of Lagos, Nigeria.
+
+                    </p>
+                    <!-- section 1 big button -->
+                    <button class="btn btn-primary request" data-toggle="modal" data-target="#exampleModal">Request a
+                        dispatch</button>
+                </div>
 
 
-                             </div>
-                             <!-- modal footer -->
-                             <div class="modal-footer">
-                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                 <button type="submit" class="btn btn-primary" name="requestDispatch">Request
-                                     dispatch</button>
-                             </div>
-                             </form>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <!-- hr divide line -->
-         <hr class="mb-0" style="width: 100%; position: absolute; left: 0; height: 30px;">
-         <div class="container">
-             <!-- s1-a (below section 1)-->
-             <div class="jumbotron bg-transparent m-0 mt-5 mb-5 rounded-0 s1-a">
-                 <div class="jumbotron bg-transparent p-0 rounded-0">
-                     <!-- very big text -->
-                     <p class="innovation m-0 p-0 xx text-uppercase">Loremipsum</p>
-                     <div class="jumbotron bg-transparent mb-0 p-0 innovate-inner-div d-flex justify-content-md-center">
-                         <div class="jumbotron bg-transparent col-9 rounded-0 row p-0">
-                             <div
-                                 class="jumbotron img-text-con con mb-0 p-2 bg-transparent d-flex justify-content-sm-between">
-                                 <!-- overlay image -->
-                                 <div class="jumbotron mb-0 bg-transparent img-con">
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <!-- modal content -->
+                        <div class="modal-content">
+                            <!-- modal head -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Request Dispatch</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!-- modal body -->
+                            <div class="modal-body">
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="text-capitalize" for="InputPhone">Phone Number</label>
+                                            <br><span class="text-danger"><?=$phone_error?></span>
+                                            <input type="tel" placeholder="Enter phone" class="form-control"
+                                                id="InputPhone" name="phone">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-capitalize" for="InputAddress">Pick up address</label>
+                                            <br><span class="text-danger"><?=$address_error?></span>
+                                            <input type="text" placeholder="Enter pick up address" class="form-control"
+                                                id="InputAddress" name="address">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-capitalize" for="InputParcel">Type of parcel</label>
+                                            <br><span class="text-danger"><?=$type_of_parcel_error?></span>
+                                            <input type="text" placeholder="Enter type of parcel" class="form-control"
+                                                id="InputParcel" name="type_of_parcel">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-capitalize" for="DeliveryAddress">Delivery
+                                                address</label>
+                                            <br><span class="text-danger"><?=$delivery_address_error?></span>
+                                            <input type="text" placeholder="Enter pick up address" class="form-control"
+                                                id="DeliveryAddress" name="delivery_address">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-capitalize" for="InputName">Recipient name</label>
+                                            <br><span class="text-danger"><?=$recipient_name_error?></span>
+                                            <input type="text" placeholder="Enter name" class="form-control"
+                                                id="InputName" name="recipient_name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-capitalize" for="InputRecipientPhone">Recipient phone
+                                                number</label>
+                                            <br><span class="text-danger"><?=$recipient_phone_error?></span>
+                                            <input type="tel" placeholder="Enter phone" class="form-control"
+                                                id="InputRecipientPhone" name="recipient_phone">
+                                        </div>
 
-                                 </div>
-                                 <p class="lead text-white mt-0 mb-0 text-con-text">
-                                     <span class="intro-text">Lorem, ipsum</span><br>
-                                     <span class="intro-more">Lorem ipsum dolor sit</span>
-                                     <!-- dot on text -->
-                                     <svg width="15" height="15">
-                                         <circle cx="7" cy="7" r="5" stroke="none" stroke-width="1"
-                                             fill="var(--draw-color)">
-                                     </svg><br>
-                                     <span class="intro-graph">We offer timely, efficient, and affordable services
-                                         within the city of Lagos. From door-to-door delivery, to Company-to-Client
-                                         delivery.
-                                     </span>
-                                 </p>
-                             </div>
-                             <!-- colored div over-layed on big text -->
-                             <div class="jumbotron dummy-con mb-0">
-
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-
-
-             </div>
-
-
-             <!-- section 2 -->
-             <div class="jumbotron bg-transparent p-3 s2">
-                 <!-- section 2 introduction text -->
-                 <p class="text-center font-weight-bold lead mb-1 text-uppercase">Our service Offering</p>
-                 <p class="text-center m-1 small">…We are all You need to meet your dispatch needs.</p>
-                 <!-- flexed container -->
-                 <div class="jumbotron bg-transparent s2-inner">
-                     <!-- picture on right flex -->
-                     <div class="jumbotron bg-transparent p-3 pic-right">
-                         <div class="jumbotron bg-transparent p-2 right-text-con">
-                             <p class="lead font-weight-bold pics-lead text-uppercase">Personal items</p>
-                             <span>
-                                 JFL offers you the dispatch of your personal parcels relieving you the hassle of doing
-                                 so.</span>
-                         </div>
-                         <div class="jumbotron bg-transparent p-1 m-0 right-img-con">
-                             <i class="fa fa-gift"></i>
-                         </div>
-                     </div>
-                     <!-- picture on left flex -->
-                     <div class="jumbotron bg-transparent p-3 pic-left">
-                         <div class="jumbotron bg-transparent p-1 m-0 left-img-con">
-                             <i class="fa fa-file"></i>
-                         </div>
-                         <div class="jumbotron bg-transparent p-2 left-text-con">
-                             <p class="lead font-weight-bold pics-lead text-uppercase">Delicate/Classified Documents</p>
-                             <span>
-                                 Your sensitive documents are secured with us for dispatch.</span>
-                         </div>
-
-                     </div>
-                     <!-- picture on right flex -->
-                     <div class="jumbotron bg-transparent p-3 pic-right">
-                         <div class="jumbotron bg-transparent p-2 right-text-con">
-                             <p class="lead font-weight-bold pics-lead text-uppercase">Enterprise/Business Packages.</p>
-                             <span>
-                                 We offer companies dispatch services, proficiently ensuring that products get to its
-                                 end users.</span>
-                         </div>
-                         <div class="jumbotron bg-transparent p-1 m-0 right-img-con">
-                             <i class="fa fa-archive"></i>
-                         </div>
-                     </div>
-                     <!-- picture on left flex -->
-                     <div class="jumbotron bg-transparent p-3 pic-left">
-                         <div class="jumbotron bg-transparent p-1 m-0 left-img-con">
-                             <i class="fa fa-cubes"></i>
-                         </div>
-                         <div class="jumbotron bg-transparent p-2 left-text-con">
-                             <p class="lead font-weight-bold pics-lead text-uppercase">Outsourcing.</p>
-                             <span>
-                                 JFL We help you focus on production while transporting your goods.</span>
-                         </div>
-
-                     </div>
-                 </div>
-                 <!-- picture on right flex -->
-                 <div class="jumbotron bg-transparent p-3 pic-right">
-                     <div class="jumbotron bg-transparent p-2 right-text-con">
-                         <p class="lead font-weight-bold pics-lead text-uppercase">Small Business Products</p>
-                         <span>
-                             We provide small business owners the luxury of easy and quick delivery of their
-                             product.</span>
-                     </div>
-                     <div class="jumbotron bg-transparent p-1 m-0 right-img-con">
-                         <i class="fa fa-truck"></i>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <!-- hr divide line -->
-         <hr>
-         <!-- container for s3 -->
-         <div class="container">
-             <!-- section 3 -->
-             <div class="jumbotron rounded-0 p-0 m-0 s3">
-                 <div class="jumbotron rounded-0 m-0 s3-flex">
-
-                     <p class="lead text-uppercase how-to-lead">How to use JFL Service</p>
-                     <div class="jumbotron bg-transparent rounded-0 p-2 m-0 about-list-div">
+                                    </div>
 
 
-                         <!-- 
+                            </div>
+                            <!-- modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" name="requestDispatch">Request
+                                    dispatch</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- hr divide line -->
+        <hr class="mb-0" style="width: 100%; position: absolute; left: 0; height: 30px;">
+        <div class="container">
+            <!-- s1-a (below section 1)-->
+            <div class="jumbotron bg-transparent m-0 mt-5 mb-5 rounded-0 s1-a">
+                <div class="jumbotron bg-transparent p-0 rounded-0">
+                    <!-- very big text -->
+                    <p class="innovation m-0 p-0 xx text-uppercase">iMAGINATIVE</p>
+                    <div class="jumbotron bg-transparent mb-0 p-0 innovate-inner-div d-flex justify-content-md-center">
+                        <div class="jumbotron bg-transparent col-9 rounded-0 row p-0">
+                            <div
+                                class="jumbotron img-text-con con mb-0 p-2 bg-transparent d-flex justify-content-sm-between">
+                                <!-- overlay image -->
+                                <div class="jumbotron mb-0 bg-transparent img-con">
+
+                                </div>
+                                <p class="lead text-white mt-0 mb-0 text-con-text">
+                                    <span class="intro-text">MEET US</span>
+                                    <!-- <span class="intro-more">MEET US</span> -->
+                                    <!-- dot on text -->
+                                    <svg width="15" height="15">
+                                        <circle cx="7" cy="7" r="5" stroke="none" stroke-width="1"
+                                            fill="var(--draw-color)">
+                                    </svg><br>
+                                    <span class="intro-graph">We offer timely, efficient, and affordable services
+                                        within the city of Lagos. From door-to-door delivery, to Company-to-Client
+                                        delivery.
+                                    </span>
+                                </p>
+                            </div>
+                            <!-- colored div over-layed on big text -->
+                            <div class="jumbotron dummy-con mb-0">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!-- section 2 -->
+            <div class="jumbotron bg-transparent p-3 s2">
+                <!-- section 2 introduction text -->
+                <p class="text-center font-weight-bold lead mb-1 text-uppercase">Our service Offering</p>
+                <p class="text-center m-1 small">…We are all You need to meet your dispatch needs.</p>
+                <!-- flexed container -->
+                <div class="jumbotron bg-transparent s2-inner">
+                    <!-- picture on right flex -->
+                    <div class="jumbotron bg-transparent p-3 pic-right">
+                        <div class="jumbotron bg-transparent p-2 right-text-con">
+                            <p class="lead font-weight-bold pics-lead text-uppercase">Personal items</p>
+                            <span>
+                                JFL offers you the dispatch of your personal parcels relieving you the hassle of doing
+                                so.</span>
+                        </div>
+                        <div class="jumbotron bg-transparent p-1 m-0 right-img-con">
+                            <i class="fa fa-gift"></i>
+                        </div>
+                    </div>
+                    <!-- picture on left flex -->
+                    <div class="jumbotron bg-transparent p-3 pic-left">
+                        <div class="jumbotron bg-transparent p-1 m-0 left-img-con">
+                            <i class="fa fa-file"></i>
+                        </div>
+                        <div class="jumbotron bg-transparent p-2 left-text-con">
+                            <p class="lead font-weight-bold pics-lead text-uppercase">Delicate/Classified Documents</p>
+                            <span>
+                                Your sensitive documents are secured with us for dispatch.</span>
+                        </div>
+
+                    </div>
+                    <!-- picture on right flex -->
+                    <div class="jumbotron bg-transparent p-3 pic-right">
+                        <div class="jumbotron bg-transparent p-2 right-text-con">
+                            <p class="lead font-weight-bold pics-lead text-uppercase">Enterprise/Business Packages.</p>
+                            <span>
+                                We offer companies dispatch services, proficiently ensuring that products get to its
+                                end users.</span>
+                        </div>
+                        <div class="jumbotron bg-transparent p-1 m-0 right-img-con">
+                            <i class="fa fa-archive"></i>
+                        </div>
+                    </div>
+                    <!-- picture on left flex -->
+                    <div class="jumbotron bg-transparent p-3 pic-left">
+                        <div class="jumbotron bg-transparent p-1 m-0 left-img-con">
+                            <i class="fa fa-cubes"></i>
+                        </div>
+                        <div class="jumbotron bg-transparent p-2 left-text-con">
+                            <p class="lead font-weight-bold pics-lead text-uppercase">Outsourcing.</p>
+                            <span>
+                                JFL We help you focus on production while transporting your goods.</span>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- picture on right flex -->
+                <div class="jumbotron bg-transparent p-3 pic-right">
+                    <div class="jumbotron bg-transparent p-2 right-text-con">
+                        <p class="lead font-weight-bold pics-lead text-uppercase">Small Business Products</p>
+                        <span>
+                            We provide small business owners the luxury of easy and quick delivery of their
+                            product.</span>
+                    </div>
+                    <div class="jumbotron bg-transparent p-1 m-0 right-img-con">
+                        <i class="fa fa-truck"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- hr divide line -->
+        <hr>
+        <!-- container for s3 -->
+        <div class="container">
+            <!-- section 3 -->
+            <div class="jumbotron rounded-0 p-0 m-0 s3">
+                <div class="jumbotron rounded-0 m-0 s3-flex">
+
+                    <p class="lead text-uppercase how-to-lead">How to use JFL Service</p>
+                    <div class="jumbotron bg-transparent rounded-0 p-2 m-0 about-list-div">
+
+
+                        <!-- 
                     Login into the website or download the application.
 ➢ Select the 'Book Now’ option.
 ➢ Fill the required form.
 ➢ A call would be put through to you for confirmation.
 ➢ In less than 5minutes, a dispatch rider would get the package and have it delivered to. -->
 
-                         <!-- accordion container -->
-                         <div class="d-flex justify-content-start">
-                             <ul class="list-group">
-                                 <a href="#col1" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
-                                     data-target="#col1">
-                                     <p class="m-0 font-weight-bold">Step 1</p>
-                                     <div id="col1" class="collapse">
-                                         <span class="collapse-text">visit our website or download the app, click the
-                                             'Request a Dispatch’ button.
-                                         </span>
-                                     </div>
+                        <!-- accordion container -->
+                        <div class="d-flex justify-content-start">
+                            <ul class="list-group">
+                                <a href="#col1" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
+                                    data-target="#col1">
+                                    <p class="m-0 font-weight-bold">Step 1</p>
+                                    <div id="col1" class="collapse">
+                                        <span class="collapse-text">visit our website or download the app, click the
+                                            'Request a Dispatch’ button.
+                                        </span>
+                                    </div>
 
-                                 </a>
+                                </a>
 
-                             </ul>
-
-
-                             <ul class="list-group">
-
-                                 <a href="#col2" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
-                                     data-target="#col2">
-                                     <p class="m-0 font-weight-bold">Step 2</p>
-                                     <div id="col2" class="collapse">
-                                         <span class="collapse-text">Fill the dispatch form. We will receive your
-                                             request and process it through a confirmation call.
-                                         </span>
-                                     </div>
-
-                                 </a>
+                            </ul>
 
 
+                            <ul class="list-group">
 
-                             </ul>
+                                <a href="#col2" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
+                                    data-target="#col2">
+                                    <p class="m-0 font-weight-bold">Step 2</p>
+                                    <div id="col2" class="collapse">
+                                        <span class="collapse-text">Fill the dispatch form. We will receive your
+                                            request and process it through a confirmation call.
+                                        </span>
+                                    </div>
 
-                             <ul class="list-group">
-
-                                 <a href="#col3" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
-                                     data-target="#col3">
-                                     <p class="m-0 font-weight-bold">Step 3</p>
-                                     <div id="col3" class="collapse">
-                                         <span class="collapse-text"> In a moment, the package will be on the way to be
-                                             delivered.
-                                         </span>
-
-                                     </div>
-
-                                 </a>
-
-                             </ul>
-                         </div>
-
-                     </div>
-                 </div>
-             </div>
-             <!-- section 4 -->
-             <div class="jumbotron bg-transparent s4">
-                 <div class="jumbotron bg-transparent m-0 mb-2 p-3">
-                     <!-- section 4 introduction -->
-                     <p class="lead font-weight-bold lead-box-section">
-                         Why Us
-                     </p>
-                     <h6 class="lead-box-span small">introducing features that make us the service to use</h6>
-                 </div>
-                 <div class="s4-inner">
-                     <!-- boxes -->
-                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
-                         <i class="fa fa-bolt"></i>
-                         <p>On-time response</p>
-                         <span>
-                             Speedy delivery you can trust always
-                         </span>
-                     </div>
-                     <!-- boxes -->
-                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
-                         <i class="fa fa-gift"></i>
-                         <p>Excellent packaging</p>
-                         <span>
-                             Your parcels can fit into our boxes.
-                         </span>
-                     </div>
-                     <!-- boxes -->
-                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
-                         <i class="fa fa-map-marker-alt"></i>
-                         <p>On-spot delivery</p>
-                         <span>
-                             Track your parcels, on the go.
-                         </span>
-                     </div>
-                     <!-- boxes -->
-                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
-                         <i class="fa fa-heart"></i>
-                         <p>Great user experience</p>
-                         <span>
-                             Get the best costumer experience for less
-                         </span>
-                     </div>
-                     <!-- boxes -->
-                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
-                         <i class="fa fa-shield-alt"></i>
-                         <p>24/7 support systems</p>
-                         <span>At your service via phone, chat or email.
-                         </span>
-                     </div>
-                     <!-- boxes -->
-                     <div class="jumbotron bg-transparent s4-boxes shadow-lg">
-                         <i class="fa fa-headphones"></i>
-                         <p>24/7 support systems</p>
-                         <span>At your service via phone, chat or email.
-                         </span>
-                     </div>
-
-                 </div>
-             </div>
-         </div>
-         <!-- section 5 -->
-         <div class="jumbotron bg-transparent rounded-0 m-0 s5 border">
-             <p class="mb-2 go-text">JFL LOGISTICS
-             </p>
-             <span class="go-span">meeting your every dispatch need.</span>
-         </div>
-         <!-- footer -->
-         <div class="jumbotron rounded-0 m-0 p-2 px-0 footer-super">
-             <p class="text-center text-white m-0 all-rights">Copyright &copy; 2020 Brand name | All rights reserved.
-             </p>
-             <p class="text-right text-white m-0 powered">Powered By Tekagon</p>
-         </div>
-     </div>
+                                </a>
 
 
-     <!--Start of Tawk.to Script-->
-     <script type="text/javascript">
-         var Tawk_API = Tawk_API || {},
-             Tawk_LoadStart = new Date();
-         (function () {
-             var s1 = document.createElement("script"),
-                 s0 = document.getElementsByTagName("script")[0];
-             s1.async = true;
-             s1.src = 'https://embed.tawk.to/5f25ed201a544e2a7275c66d/default';
-             s1.charset = 'UTF-8';
-             s1.setAttribute('crossorigin', '*');
-             s0.parentNode.insertBefore(s1, s0);
-         })();
-     </script>
-     <!--End of Tawk.to Script-->
- </body>
 
- </html>
+                            </ul>
+
+                            <ul class="list-group">
+
+                                <a href="#col3" class="list-group-item bg-white mb-2 border-0" data-toggle="collapse"
+                                    data-target="#col3">
+                                    <p class="m-0 font-weight-bold">Step 3</p>
+                                    <div id="col3" class="collapse">
+                                        <span class="collapse-text"> In a moment, the package will be on the way to be
+                                            delivered.
+                                        </span>
+
+                                    </div>
+
+                                </a>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- section 4 -->
+            <div class="jumbotron bg-transparent s4">
+                <div class="jumbotron bg-transparent m-0 mb-2 p-3">
+                    <!-- section 4 introduction -->
+                    <p class="lead font-weight-bold lead-box-section">
+                        Why Us
+                    </p>
+                    <h6 class="lead-box-span small">introducing features that make us the service to use</h6>
+                </div>
+                <div class="s4-inner">
+                    <!-- boxes -->
+                    <div class="jumbotron bg-transparent s4-boxes shadow-lg">
+                        <i class="fa fa-bolt"></i>
+                        <p>On-time response</p>
+                        <span>
+                            Speedy delivery you can trust always
+                        </span>
+                    </div>
+                    <!-- boxes -->
+                    <div class="jumbotron bg-transparent s4-boxes shadow-lg">
+                        <i class="fa fa-gift"></i>
+                        <p>Excellent packaging</p>
+                        <span>
+                            Your parcels can fit into our boxes.
+                        </span>
+                    </div>
+                    <!-- boxes -->
+                    <div class="jumbotron bg-transparent s4-boxes shadow-lg">
+                        <i class="fa fa-map-marker-alt"></i>
+                        <p>On-spot delivery</p>
+                        <span>
+                            Track your parcels, on the go.
+                        </span>
+                    </div>
+                    <!-- boxes -->
+                    <div class="jumbotron bg-transparent s4-boxes shadow-lg">
+                        <i class="fa fa-heart"></i>
+                        <p>Great user experience</p>
+                        <span>
+                            Get the best costumer experience for less
+                        </span>
+                    </div>
+                    <!-- boxes -->
+                    <div class="jumbotron bg-transparent s4-boxes shadow-lg">
+                        <i class="fa fa-shield-alt"></i>
+                        <p>24/7 support systems</p>
+                        <span>At your service via phone, chat or email.
+                        </span>
+                    </div>
+                    <!-- boxes -->
+                    <div class="jumbotron bg-transparent s4-boxes shadow-lg">
+                        <i class="fa fa-headphones"></i>
+                        <p>24/7 support systems</p>
+                        <span>At your service via phone, chat or email.
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- section 5 -->
+        <div class="jumbotron bg-transparent rounded-0 m-0 s5 border">
+            <p class="mb-2 go-text">JFL LOGISTICS
+            </p>
+            <span class="go-span">meeting your every dispatch need.</span>
+        </div>
+        <!-- footer -->
+        <div class="jumbotron rounded-0 m-0 p-2 px-0 footer-super">
+            <p class="text-center text-white m-0 all-rights">Copyright &copy; 2020 Brand name | All rights reserved.
+            </p>
+            <p class="text-right text-white m-0 powered">Powered By Tekagon</p>
+        </div>
+    </div>
+
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5f25ed201a544e2a7275c66d/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+
+</html>
